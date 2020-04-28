@@ -22,3 +22,4 @@ RUN apk add --update --no-cache \
 RUN apk add --no-cache zip libzip-dev
 RUN docker-php-ext-configure zip --with-libzip
 RUN docker-php-ext-install zip
+RUN docker-php-ext-install exif
