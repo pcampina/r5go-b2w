@@ -128,7 +128,7 @@
                     </div><!-- .panel -->
 
                     <!-- ### EXCERPT ### -->
-                    <div class="panel">
+                    {{-- <div class="panel">
                         <div class="panel-heading">
                             <h3 class="panel-title">{!! __('Excerpt') !!}</h3>
                             <div class="panel-actions">
@@ -142,7 +142,7 @@
                             ])
                             <textarea class="form-control" name="excerpt">{{ $dataTypeContent->excerpt ?? '' }}</textarea>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="panel">
                         <div class="panel-heading">
@@ -207,14 +207,14 @@
                                     {!! isFieldSlugAutoGenerator($dataType, $dataTypeContent, "slug") !!}
                                     value="{{ $dataTypeContent->slug ?? '' }}">
                             </div>
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <label for="status">{{ __('Status') }}</label>
                                 <select class="form-control" name="status">
                                     <option value="PUBLISHED"@if(isset($dataTypeContent->status) && $dataTypeContent->status == 'PUBLISHED') selected="selected"@endif>{{ __('Published') }}</option>
                                     <option value="DRAFT"@if(isset($dataTypeContent->status) && $dataTypeContent->status == 'DRAFT') selected="selected"@endif>{{ __('Draft') }}</option>
                                     <option value="PENDING"@if(isset($dataTypeContent->status) && $dataTypeContent->status == 'PENDING') selected="selected"@endif>{{ __('Pending') }}</option>
                                 </select>
-                            </div>
+                            </div> --}}
                             <div class="form-group">
                                 <label for="category_id">{{ __('Category') }}</label>
                                 <select class="form-control" name="category_id">
@@ -223,10 +223,10 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <label for="featured">{{ __('voyager::generic.featured') }}</label>
                                 <input type="checkbox" name="featured"@if(isset($dataTypeContent->featured) && $dataTypeContent->featured) checked="checked"@endif>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
 
@@ -247,7 +247,7 @@
                     </div>
 
                     <!-- ### SEO CONTENT ### -->
-                    <div class="panel panel-bordered panel-info">
+                    {{-- <div class="panel panel-bordered panel-info">
                         <div class="panel-heading">
                             <h3 class="panel-title"><i class="icon wb-search"></i> {{ __('SEO Content') }}</h3>
                             <div class="panel-actions">
@@ -280,7 +280,7 @@
                                 <input type="text" class="form-control" name="seo_title" placeholder="SEO Title" value="{{ $dataTypeContent->seo_title ?? '' }}">
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
 
