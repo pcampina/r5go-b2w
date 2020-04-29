@@ -3,6 +3,12 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Resources\Product as ProductResource;
+use App\Product;
+
+use App\Http\Resources\Category as CategoryResource;
+use App\Category;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,3 +23,27 @@ use Illuminate\Support\Facades\Route;
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+
+Route::group(['prefix' => 'products', 'middleware' => 'api'], function () {
+    // List all Products
+    Route::get('/', function () {
+        return ProductResource::collection(Product::all());
+    });
+
+    // List Product by ID
+    Route::get('/{id}', function (Request $request) {
+        return new ProductResource(Product::find($request->id));
+    });
+});
+
+Route::group(['prefix' => 'category', 'middleware' => 'api'], function () {
+    // List all Category
+    Route::get('/', function () {
+        return CategoryResource::collection(Category::all());
+    });
+
+    // List Category by ID
+    Route::get('/{id}', function (Request $request) {
+        return new CategoryResource(Category::find($request->id));
+    });
+});
