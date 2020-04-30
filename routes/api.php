@@ -34,6 +34,11 @@ Route::group(['prefix' => 'products', 'middleware' => 'api'], function () {
     Route::get('/{id}', function (Request $request) {
         return new ProductResource(Product::find($request->id));
     });
+
+    // List Product by barcode
+    Route::get('/barcode/{product:barcode}', function (Product $product, Request $request) {
+        return new ProductResource($product);
+    });
 });
 
 Route::group(['prefix' => 'category', 'middleware' => 'api'], function () {
