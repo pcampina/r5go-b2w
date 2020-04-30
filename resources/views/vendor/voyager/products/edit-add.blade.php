@@ -231,7 +231,7 @@
                     </div>
 
                     <!-- ### IMAGE ### -->
-                    <div class="panel panel-bordered panel-primary">
+                    {{-- <div class="panel panel-bordered panel-primary">
                         <div class="panel-heading">
                             <h3 class="panel-title"><i class="icon wb-image"></i> {{ __('Image') }}</h3>
                             <div class="panel-actions">
@@ -244,7 +244,22 @@
                             @endif
                             <input type="file" name="image">
                         </div>
-                    </div>
+                    </div> --}}
+                    <div class="panel panel-bordered panel-primary">
+                      <div class="panel-heading">
+                          <h3 class="panel-title"><i class="icon wb-image"></i> {{ __('Image') }}</h3>
+                          <div class="panel-actions">
+                              <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
+                          </div>
+                      </div>
+                      <div class="panel-body">
+                          @include('voyager::multilingual.input-hidden', [
+                              '_field_name'  => 'image',
+                              '_field_trans' => get_field_translations($dataTypeContent, 'image')
+                          ])
+                          <input type="text" class="form-control" id="image" name="image" placeholder="Url to image" value="{{ $dataTypeContent->image ?? '' }}">
+                      </div>
+                  </div>
 
                     <!-- ### SEO CONTENT ### -->
                     {{-- <div class="panel panel-bordered panel-info">
