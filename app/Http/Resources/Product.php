@@ -19,7 +19,7 @@ class Product extends JsonResource
       'category_id'   => $this->category_id,
       'barcode'       => $this->barcode,
       'title'         => $this->title,
-      'body'          => $this->body,
+      'body'          => strip_tags($this->body),
       'price'         => number_format($this->price, 2, ',', '.'),
       'image'         => $this->image,
       'slug'          => $this->slug,
