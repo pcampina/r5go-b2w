@@ -1,6 +1,25 @@
-## Rocket Five Go Scan Back-end
+<p align="center">
+  <a href="https://github.com/pcampina/r5go-b2w">
+  <img height="100" width="100' align="center" src="https://i.ibb.co/6Y9MhRX/goscan.png" /></a>
+  <p align="center">
+    Buy your products in <a href="https://www.americanas.com.br/">Americanas</a> just scanning then.
+    <br />
+    <br />
+    View Demos:
+    <a href="https://rocket-five-go-scan.herokuapp.com/">Front-end (PWA)</a> |
+    <a href="http://r5-go.herokuapp.com/admin/login">Back-end</a>
+  </p>
+</p>
 
-A solution developed with Laravel framework and much love.
+## About The Project
+
+This project is a buy solution developed for MegaHack 2.0 ([Shawee](https://www.megahack.com.br/)) for Americanas / B2W
+
+## Built with
+
+- [Laravel](https://laravel.com)
+- [Voyager](https://voyager.devdojo.com/)
+- [MySql](https://www.mysql.com/)
 
 ## API Endpoints
 
@@ -13,12 +32,31 @@ A solution developed with Laravel framework and much love.
 (GET) http://r5-go.herokuapp.com/api/category/{id}
 ```
 
-## Demo App
+## Getting started
 
-- [http://r5-go.herokuapp.com/admin/login](http://r5-go.herokuapp.com/admin/login)
+1. `git clone https://github.com/pcampina/r5go-b2w`
+2. `composer install`
+3. `mv .env.example`
+4. `$ php artisan key:generate`
+5. Setup your .env
 
-_In very soon Us release data for login_
+```
+APP_NAME=Myapp
+APP_ENV=local
+APP_KEY=base64:your_generated_key by step 4
+APP_DEBUG=true
+APP_URL=http://localhost:8080
+
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=your_database
+DB_USERNAME=your_user
+DB_PASSWORD=your_password
+```
+
+_If you want, use the demo sql in \_db/ folder._
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+[MIT license](https://opensource.org/licenses/MIT).
