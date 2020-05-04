@@ -24,7 +24,7 @@ class ProductController extends Controller
        * Request data from https://api.cosmos.bluesoft.com.br/
        */
       $cosmosRequest = Http::withHeaders([
-        'X-Cosmos-Token' => 'rLn2grUWMzmNd-5FMbuR7w',
+        'X-Cosmos-Token' => env('API_COSMOS_TOKEN'),
       ])->get('https://api.cosmos.bluesoft.com.br/gtins/' . $barcode);
 
       // Decode data received
